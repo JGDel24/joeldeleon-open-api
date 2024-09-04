@@ -20,3 +20,18 @@ fetch(url)
         console.error('Error fetching data:', error);
     });
 
+    const images = [
+        'image1.jpg',
+        'image2.jpg',
+        'image3.jpg',
+    ]
+
+    function changeBackground() {
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        document.body.style.backgroundImage = `url('${randomImage}')`;
+    }
+
+    setInterval(changeBackground, 4000)
+
+    changeBackground();
+
