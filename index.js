@@ -6,17 +6,17 @@ const hash = CryptoJS.MD5(ts + privateKey + publicKey).toString();
 const url = `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
 
 fetch(url)
-.then(function(response){
-    return response.json();
-})
+    .then(function (response) {
+        return response.json();
+    })
 
-.then(function(data){
-    console.log(data);
+    .then(function (data) {
+        console.log(data);
 
-    
-})
 
-.catch(function(error) {
-    console.error('Error fetching data:', error);
-});
+    })
+
+    .catch(function (error) {
+        console.error('Error fetching data:', error);
+    });
 
