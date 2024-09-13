@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
-
+<body>
 <div class="container">
     <div class="content">
         <header>
             <div class="search-bar">
                 <form id="searchForm">
-                    <input type="text" id="searchInput" placeholder="Search" required> 
+                    <input type="text" id="searchInput" placeholder="Search" required>
                     <button type="submit">Search</button>
                 </form>
 
@@ -22,21 +22,27 @@
 
         </header>
 
+        <nav>
+
+        </nav>
+
         <main>
             <h1>Marvel's Heroes and Villains</h1>
             <section id="characterInfo" class="hero-villain-container">
                 <div id="heroInfo" class="hero-side"></div>
-                
-                
             </section>
+
+            <nav>
+                <a href="comics.html" id="comicsLink"></a>
+            </nav>
         </main>
     </div>
 
 </div>
 
 
-    <div id="results"></div>
-    <script src="index.js"></script>
+<div id="results"></div>
+<script src="index.js"></script>
 </body>
 
 </html>

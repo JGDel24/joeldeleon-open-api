@@ -110,9 +110,9 @@ img {
         font-size: 2.5em;
     }
 
-   
 
-    
+
+
 }
 
 /* Laptop styles */
@@ -134,7 +134,7 @@ img {
         font-size: 3em;
     }
 
-    
+
 }
 
 /* Desktop styles */
@@ -156,4 +156,29 @@ img {
         font-size: 3.5em;
     }
 
+}
+
+#backToHomeNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    text-align: center;
+    padding: 10px;
+    z-index: 1000; 
+}
+
+#backToHomeButton {
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    background-color: #e62429;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#backToHomeButton:hover {
+    background-color: #b71c1c;
 }
