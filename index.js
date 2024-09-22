@@ -9,11 +9,11 @@ const images = [
     'image3.jpg',
 ];
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     setInterval(changeBackground, 4000);
     changeBackground();
 
-    document.getElementById('searchForm').addEventListener('submit', function(event) {
+    document.getElementById('searchForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
         var characterName = document.getElementById('searchInput').value;
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.getElementById('comicsNavButton').addEventListener('click', function() {
+    document.getElementById('comicsNavButton').addEventListener('click', function () {
         document.getElementById('comicsSection').scrollIntoView({
             behavior: 'smooth'
         });
@@ -34,10 +34,10 @@ function fetchCharacterData(characterName) {
     var url = 'https://gateway.marvel.com/v1/public/characters?nameStartsWith=' + characterName + '&ts=' + date + '&apikey=' + publicKey + '&hash=' + hash;
 
     fetch(url)
-        .then(function(response) {
+        .then(function (response) {
             return response.json();
         })
-        .then(function(data) {
+        .then(function (data) {
             var hero = data.data.results[0];
 
             if (hero) {
@@ -47,13 +47,13 @@ function fetchCharacterData(characterName) {
                     <p>${hero.description || 'No description available.'}</p>
                 `;
 
-                
+
                 fetchComicsData(hero.id);
             } else {
                 document.getElementById('heroInfo').innerHTML = '<p>Character not found.</p>';
             }
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.error('Error fetching character data:', error);
             document.getElementById('heroInfo').innerHTML = '<p>Error retrieving data.</p>';
         });
@@ -63,14 +63,14 @@ function fetchComicsData(characterId) {
     var comicsUrl = 'https://gateway.marvel.com/v1/public/characters/' + characterId + '/comics?ts=' + date + '&apikey=' + publicKey + '&hash=' + hash;
 
     fetch(comicsUrl)
-        .then(function(response) {
+        .then(function (response) {
             return response.json();
         })
-        .then(function(data) {
+        .then(function (data) {
             var comics = data.data.results;
 
             if (comics.length > 0) {
-                var comicsList = comics.map(function(comic) {
+                var comicsList = comics.map(function (comic) {
                     return '<li>' + comic.title + '</li>';
                 }).join('');
                 document.getElementById('comicsSection').innerHTML = `
@@ -81,7 +81,7 @@ function fetchComicsData(characterId) {
                 document.getElementById('comicsSection').innerHTML = '<p>No comics found for this character.</p>';
             }
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.error('Error fetching comics data:', error);
             document.getElementById('comicsSection').innerHTML = '<p>Error retrieving comics.</p>';
         });
