@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +7,28 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
-
-<div class="container">
-    <div class="content">
+<body>
+    <div class="container">
         <header>
             <div class="search-bar">
                 <form id="searchForm">
-                    <input type="text" id="searchInput" placeholder="Search" required> 
+                    <input type="text" id="searchInput" placeholder="Search" required>
                     <button type="submit">Search</button>
                 </form>
-
+                <button id="comicsNavButton">Go to Comics List</button>
             </div>
-
         </header>
-
         <main>
-            <h1>Marvel's Heroes and Villains</h1>
-            <section id="characterInfo">
-                
-            </section>
+            <div id="mainContent">
+                <div class="hero-info" id="heroInfo">
+                    
+                </div>
+                <div class="comics-section" id="comicsSection">
+                    >
+                </div>
+            </div>
         </main>
     </div>
-
-</div>
-
-
-    <div id="results"></div>
     <script src="index.js"></script>
 </body>
-
 </html>
